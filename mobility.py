@@ -75,18 +75,18 @@ class Motor():
 
     @staticmethod
     def move(linear: int, angular: int):
-        motorLeft = max(min(linear + angular, -100), 100)
-        motorRight = max(min(linear - angular, -100), 100)
+        motorLeft = min(max(linear + angular, -100), 100)
+        motorRight = min(max(linear - angular, -100), 100)
         
         if motorLeft >= 0:
             Motor.Motors[0].forward(motorLeft)
         else:
-            Motor.Motors[0].backward(motorLeft)
+            Motor.Motors[0].backward(abs(motorLeft))
 
         if motorRight >= 0:
-            Motor.Motors[0].forward(abs(motorRight))
+            Motor.Motors[1].forward(motorRight)
         else:
-            Motor.Motors[0].backward(abs(motorRight))
+            Motor.Motors[1].backward(abs(motorRight))
 
     @staticmethod
     def rotate(dir: int):
