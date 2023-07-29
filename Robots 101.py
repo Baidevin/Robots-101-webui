@@ -10,10 +10,10 @@ debug = False
 
 cmdVel = [0, 0]
 
-SPEEDMOD = 1
+SPEEDMOD = 0.2
 
 FORWARDMULT = 100
-STEERMULT = 50
+STEERMULT = 80
 
 cmdDict = {
     "forwardKey" : 0,
